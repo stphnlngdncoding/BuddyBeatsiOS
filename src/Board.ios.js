@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight } from 'react-native';
+import { 
+  Text,
+  View,
+  TouchableHighlight,
+  StyleSheet,
+
+} from 'react-native';
 import Square from './Square';
 
 export default class Board extends Component {
@@ -13,27 +19,47 @@ export default class Board extends Component {
         }
    }
    handleSquareClick(row, column) {
-        this.setState({ board: [ [1, 1], [1, 1] ]});
+      const deepClone = (arr) => arr.map(row => row.map(x => x));
+      const clone = deepClone(this.state.board);
+      this.setState((prevState) => {
+        const boardClone = deepClone(prevState.board);
+        const prevValue = boardClone[row][column]
+        boardClone[row][column] = prevValue === 1 ? 0 : 1 
+        console.log(boardClone);
+        return { board: boardClone }
+      });
    }
     render() {
         console.log(this.state);
         return (
-            <View style={{flex: 1, flexDirection: 'column', backgroundColor: 'blue'}}>
-                {this.state.board.map(row => {
+          <View style={styles.container}>
+            {this.state.board.map((row, i) => {
+              return (
+                <View style={{height: 100, flexDirection: 'row'}}>
+                  {row.map((column, j) => {
                     return (
-                        <View style={{flex: 1, flexDirection: 'row'}}>
-                            {row.map(column => {
-                                return (
-                                    <Square
-                                        pressed={!!column}
-                                        accessor={{row, column}}
-                                        handleSquareClick={this.handleSquareClick.bind(this)}
-                                    />)
-                            })}
-                        </View>
-                    )
-                })}
-            </View>
+                      <Square
+                        pressed={!!column}
+                        accessor={{row: i, column: j}}
+                        handleSquareClick={this.handleSquareClick.bind(this)}
+                      />)
+                    })}
+                </View>
+              )
+            })}
+          </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignSelf: 'stretch',
+    backgroundColor: 'blue',
+  },
+  row: {
+    // justifyItems: 'center',
+    height: 100,
+    // flexDirection: 'row',
+  }
+});
