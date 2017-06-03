@@ -1,0 +1,3 @@
+rootProject.name = 'BuddyBeats'
+
+include ':app'
