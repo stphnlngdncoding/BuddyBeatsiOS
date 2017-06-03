@@ -13,8 +13,9 @@ export default class Board extends Component {
        super(props);
        this.state = {
         board: [
-            [0, 0],
-            [1, 0],
+            [0, 0, 0],
+            [1, 0, 0],
+            [1, 0, 0],
             ]
         }
    }
