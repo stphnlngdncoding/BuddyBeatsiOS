@@ -11,9 +11,27 @@ import {
   Text,
   View
 } from 'react-native';
+import reactMixin from 'react-mixin';
+import TimerMixin from 'react-timer-mixin';
 import Board from './src/Board';
 
-export default class BuddyBeats extends Component {
+class BuddyBeats extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      beat: 0,
+    }
+  }
+  componentDidMount() {
+    const timer = this.setInterval(this.tick.bind(this), 500)
+  }
+  tick() {
+    this.setState((prevState) => {
+      const beat = prevState.beat;
+      const nextBeat = beat === 3 ? 0 : prevState.beat + 1;
+      return { beat: nextBeat }
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -41,5 +59,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+reactMixin(BuddyBeats.prototype, TimerMixin)
+export default BuddyBeats
 
 AppRegistry.registerComponent('BuddyBeats', () => BuddyBeats);
