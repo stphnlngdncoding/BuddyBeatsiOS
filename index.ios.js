@@ -14,6 +14,7 @@ import {
 import reactMixin from 'react-mixin';
 import TimerMixin from 'react-timer-mixin';
 import Board from './src/Board';
+import Player from './src/Player'
 
 class BuddyBeats extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class BuddyBeats extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Player />
         <Board />
       </View>
     );

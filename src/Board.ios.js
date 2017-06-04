@@ -27,7 +27,6 @@ export default class Board extends Component {
         const boardClone = deepClone(prevState.board);
         const prevValue = boardClone[row][column]
         boardClone[row][column] = prevValue === 1 ? 0 : 1 
-        console.log(boardClone);
         return { board: boardClone }
       });
    }
