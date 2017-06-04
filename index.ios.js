@@ -52,7 +52,9 @@ class BuddyBeats extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Player beat={this.state.beat}/>
+        <Player
+          board={this.state.board}
+          beat={this.state.beat}/>
         <Board
           board={this.state.board}
           handleSquareClick={this.handleSquareClick.bind(this)}

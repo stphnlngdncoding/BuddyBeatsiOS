@@ -31,8 +31,30 @@ export default class SoundPlayer extends React.PureComponent {
         onPress={() => this._onPress()}><Text>test</Text>
       </TouchableHighlight>
     )*/
-  componentDidUpdate() {
-    console.log('this.props.beat', this.props.beat)
+  enableDrum(drum, i, drumPath) {
+    console.log('this.props.board[i][this.props.beat]', this.props.board[i][this.props.beat])
+    console.log('this.props.board', this.props.board);
+    console.log('drum', drum)
+    if (this.props.board[i][this.props.beat]) {
+      this.state[drum].play()
+      this.setState({ [drum] : null}, () => {
+        this.setState({ [drum]: new Player(drumPath)})
+      })
+    }
+  }
+  componentWillReceiveProps() {
+    // console.log('this.props.beat', this.props.board[0][this.props.beat])
+    // if (this.props.board[0][this.props.beat] === 1) {
+    //   console.log('triggered')
+    //   this.state.drum1.play();
+    //   this.setState({ drum1: null }, () => {
+    //     this.setState({ drum1: new Player('kick-classic.wav')})
+    //   })
+    // }
+    this.enableDrum('drum1', 0, 'kick-classic.wav')
+    this.enableDrum('drum2', 1, 'snare-punch.wav')
+    this.enableDrum('drum3', 2, 'hihat-reso.wav')
+    this.enableDrum('drum4', 3, 'perc-hollow.wav')
   }
   render() {
     return null;
