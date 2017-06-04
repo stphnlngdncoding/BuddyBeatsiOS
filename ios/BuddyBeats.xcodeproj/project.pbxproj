@@ -38,6 +38,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		D83628921EE3883200AD3551 /* libReactNativeAudioToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D83628911EE3880300AD3551 /* libReactNativeAudioToolkit.a */; };
 		D83628941EE38A3000AD3551 /* kick-classic.wav in Resources */ = {isa = PBXBuildFile; fileRef = D83628931EE38A3000AD3551 /* kick-classic.wav */; };
+		D83628961EE3C21D00AD3551 /* hihat-reso.wav in Resources */ = {isa = PBXBuildFile; fileRef = D83628951EE3C21D00AD3551 /* hihat-reso.wav */; };
+		D83628981EE3C24A00AD3551 /* snare-punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = D83628971EE3C24A00AD3551 /* snare-punch.wav */; };
+		D836289A1EE3C27200AD3551 /* perc-hollow.wav in Resources */ = {isa = PBXBuildFile; fileRef = D83628991EE3C27200AD3551 /* perc-hollow.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +269,9 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		D83628731EE3880300AD3551 /* ReactNativeAudioToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeAudioToolkit.xcodeproj; path = "../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/ReactNativeAudioToolkit.xcodeproj"; sourceTree = "<group>"; };
 		D83628931EE38A3000AD3551 /* kick-classic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "kick-classic.wav"; path = "../src/sounds/kick-classic.wav"; sourceTree = "<group>"; };
+		D83628951EE3C21D00AD3551 /* hihat-reso.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hihat-reso.wav"; path = "../../../Downloads/[99Sounds] 99 Drum Samples/Samples/hihat-reso.wav"; sourceTree = "<group>"; };
+		D83628971EE3C24A00AD3551 /* snare-punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-punch.wav"; path = "../../../Downloads/[99Sounds] 99 Drum Samples/Samples/snare-punch.wav"; sourceTree = "<group>"; };
+		D83628991EE3C27200AD3551 /* perc-hollow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "perc-hollow.wav"; path = "../../../Downloads/[99Sounds] 99 Drum Samples/Samples/perc-hollow.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,8 +407,11 @@
 		13B07FAE1A68108700A75B9A /* BuddyBeats */ = {
 			isa = PBXGroup;
 			children = (
+				D83628991EE3C27200AD3551 /* perc-hollow.wav */,
+				D83628951EE3C21D00AD3551 /* hihat-reso.wav */,
 				D83628931EE38A3000AD3551 /* kick-classic.wav */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				D83628971EE3C24A00AD3551 /* snare-punch.wav */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -873,7 +882,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D83628981EE3C24A00AD3551 /* snare-punch.wav in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				D836289A1EE3C27200AD3551 /* perc-hollow.wav in Resources */,
+				D83628961EE3C21D00AD3551 /* hihat-reso.wav in Resources */,
 				D83628941EE38A3000AD3551 /* kick-classic.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

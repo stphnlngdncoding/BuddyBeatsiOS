@@ -21,10 +21,26 @@ class BuddyBeats extends Component {
     super(props);
     this.state = {
       beat: 0,
+      board: [
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          [0, 0, 0, 0],
+          ]
     }
   }
   componentDidMount() {
     const timer = this.setInterval(this.tick.bind(this), 500)
+  }
+  handleSquareClick(row, column) {
+    const deepClone = (arr) => arr.map(row => row.map(x => x));
+    const clone = deepClone(this.state.board);
+    this.setState((prevState) => {
+      const boardClone = deepClone(prevState.board);
+      const prevValue = boardClone[row][column]
+      boardClone[row][column] = prevValue === 1 ? 0 : 1 
+      return { board: boardClone }
+    });
   }
   tick() {
     this.setState((prevState) => {
@@ -36,8 +52,11 @@ class BuddyBeats extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Player />
-        <Board />
+        <Player beat={this.state.beat}/>
+        <Board
+          board={this.state.board}
+          handleSquareClick={this.handleSquareClick.bind(this)}
+        />
       </View>
     );
   }

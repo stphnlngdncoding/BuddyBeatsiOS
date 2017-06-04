@@ -12,10 +12,15 @@ import {
 export default class SoundPlayer extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      drum1: new Player('kick-classic.wav'),
+      drum2: new Player('snare-punch.wav'),
+      drum3: new Player('hihat-reso.wav'),
+      drum4: new Player('perc-hollow.wav'),
+    }
   }
-  componentDidMount() {
-  }
-  _onPress() {
+
+  /*_onPress() {
     console.log('player mounting');
     const player = new Player('kick-classic.wav');    
     player.play();
@@ -25,6 +30,11 @@ export default class SoundPlayer extends React.PureComponent {
       <TouchableHighlight
         onPress={() => this._onPress()}><Text>test</Text>
       </TouchableHighlight>
-    )
+    )*/
+  componentDidUpdate() {
+    console.log('this.props.beat', this.props.beat)
+  }
+  render() {
+    return null;
   }
 }
